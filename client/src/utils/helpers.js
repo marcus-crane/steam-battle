@@ -13,13 +13,17 @@ const fetchUserInfo = (username) => {
 const getScore = (user) => {
   let score = 0
 
-  score += (user.followers_count * 3)
-  score += (user.friends_count * 1.5)
-  score += (user.favourites_count / 5)
-  score += (user.statuses_count / 5)
+  score += (user.followers_count * 5)
+  score += (user.friends_count * 2)
+  score += (user.favourites_count / 10)
+  score += (user.statuses_count / 10)
+
+  if (user.verified) {
+    score += 100000
+  }
 
   if (user.id === 96932207) {
-    score = 9999999
+    score = 9999999999
   }
 
   return score.toFixed()
@@ -38,13 +42,19 @@ const helpers = {
   tallyScores: function(user1, user2) {
     return Promise.all([user1, user2])
     .then((users) => { return users.map((user) => { return { info: user, score: getScore(user) }}) })
-    .then((player) => { 
-      if (player[0].score > player[1].score) {
+    .then((player) => {
+      let player1Score = parseInt(player[0].score, 10)
+      let player2Score = parseInt(player[1].score, 10)
+
+      if (player1Score < player2Score) {
+        player[0].result = 'Loser'
+        player[1].result = 'Winner'
+      } else if (player1Score > player2Score) {
         player[0].result = 'Winner'
         player[1].result = 'Loser'
       } else {
-        player[0].result = 'Loser'
-        player[1].result = 'Winner'
+        player[0].result = 'Tie'
+        player[1].result = 'Tie'
       }
 
       return player
