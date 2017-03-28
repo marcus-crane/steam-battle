@@ -1,12 +1,15 @@
 import React from 'react'
 import hrn from 'hrn'
 import Item from './Item'
-import helpers from '../utils/helpers'
 
 const UserInfo = (props) => {
   console.log(props)
   return (
     <nav className="level" style={{ display: 'block', marginLeft: '1.5rem', marginRight: '1.5rem' }}>
+      {props.header && <h3 className="title is-3">{props.header}</h3>}
+      <hr />
+      {props.score && <h4 className="subtitle is-5">Score: {props.score}</h4>}
+      <hr />
       <h5 className="subtitle is-5" style={{ marginBottom: '12px' }}>{props.info.name}</h5>
       <img src={props.info.profile_image_url_https} alt="User avatar" style={{ marginBottom: '12px' }} />
       <Item heading="Tweets" value={hrn(props.info.statuses_count)} />

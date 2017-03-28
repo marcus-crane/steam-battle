@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import GetUserContainer from './containers/GetUserContainer'
 import BattleContainer from './containers/BattleContainer'
+import ResultsContainer from './containers/ResultsContainer'
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
           ( <GetUserContainer header="Player 2" /> )
         } />
         <Route path="/battle" component={BattleContainer} />
+        <Route path="/results" component={ResultsContainer} />
       </Switch>
     </Router>
   )

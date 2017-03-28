@@ -13,7 +13,6 @@ class BattleContainer extends Component {
     let query = this.context.router.route.location.query
     helpers.fetchInfo(query)
     .then((res) => {
-      console.log(res)
       this.setState({
         isLoading: false,
         user1: res[0],
@@ -22,10 +21,21 @@ class BattleContainer extends Component {
     })
   }
 
+  handleInitiateBattle = () => {
+    this.context.router.history.push({
+      pathname: '/results',
+      state: {
+        user1: this.state.user1,
+        user2: this.state.user2
+      }
+    }).bind(this)
+  }
+
   render() {
     return this.state.isLoading === true
       ? <Loading />
       : <Battle
+        onInitiateBattle={this.handleInitiateBattle}
         user1={this.state.user1}
         user2={this.state.user2}
       />
