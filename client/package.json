@@ -1,6 +1,7 @@
 {
-  "name": "twitter-battle",
+  "name": "twitter-battle-client",
   "version": "0.1.0",
+  "description": "The client for the Twitter Battle app"
   "private": true,
   "dependencies": {
     "dotenv": "^2.0.0",
