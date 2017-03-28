@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Battle from '../components/Battle'
 import Loading from '../components/Loading'
+import helpers from '../utils/helpers'
 
 class BattleContainer extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class BattleContainer extends Component {
 
   componentDidMount = () => {
     let query = this.context.router.route.location.query
-    console.log(query)
+    helpers.fetchInfo(query.user1, query.user2)
   }
 
   render() {

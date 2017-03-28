@@ -8,7 +8,6 @@ class GetUserContainer extends Component {
   }
 
   handleUpdateUser = (e) => {
-
     this.setState({ username: e.target.value })
   }
 
