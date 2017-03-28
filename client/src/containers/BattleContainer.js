@@ -9,7 +9,7 @@ class BattleContainer extends Component {
     this.state = { isLoading: true }
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     let query = this.context.router.route.location.query
     helpers.fetchInfo(query)
     .then((res) => {

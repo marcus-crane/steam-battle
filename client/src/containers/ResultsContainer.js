@@ -13,7 +13,7 @@ class ResultsContainer extends Component {
     }
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     helpers.tallyScores(this.state.user1, this.state.user2)
     .then((res) => {
       this.setState({
