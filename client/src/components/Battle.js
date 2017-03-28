@@ -1,12 +1,16 @@
 import React from 'react';
 import Layout from './Layout'
+import UserInfo from './UserInfo'
 
 const Battle = (props) => {
+  console.log('battle props', props)
   return (
     <Layout>
       <h1 className="title">Confirm Participants</h1>
-      <p>User1: {props.user1}</p>
-      <p>User2: {props.user2}</p>
+      <div className="columns">
+        <UserInfo header="Player 1" info={props.user1} />
+        <UserInfo header="Player 2" info={props.user2} />
+      </div>
     </Layout>
   );
 }

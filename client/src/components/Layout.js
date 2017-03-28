@@ -10,6 +10,8 @@ const Layout = (props) => {
           {props.children}
         </div>
       </div>
+      <footer className="footer">
+      </footer>
     </section>
   );
 }

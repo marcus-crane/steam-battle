@@ -1,9 +1,9 @@
-import got from 'got'
+import axios from 'axios'
 
 const fetchUserInfo = (username) => {
-  return got.get('http://localhost:8181/' + username)
+  return axios.get('http://twitter.thingsima.de/api/' + username)
   .then((res) => {
-    return res.body
+    return res.data
   })
   .catch((err) => {
     console.warn('Error in fetchUserInfo', err)
@@ -11,8 +11,14 @@ const fetchUserInfo = (username) => {
 }
 
 const helpers = {
-  fetchInfo: function(player1, player2) {
-    return fetchUserInfo(player1)
+  fetchInfo: function(players) {
+    let user1 = fetchUserInfo(players.user1)
+    let user2 = fetchUserInfo(players.user2)
+
+    return axios.all([user1, user2])
+    .catch((err) => {
+      console.log('Error in fetchInfo', err)
+    })
   }
 }
 

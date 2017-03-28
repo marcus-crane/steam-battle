@@ -11,9 +11,14 @@ class BattleContainer extends Component {
 
   componentDidMount = () => {
     let query = this.context.router.route.location.query
-    helpers.fetchInfo(query.user1, query.user2)
+    helpers.fetchInfo(query)
     .then((res) => {
       console.log(res)
+      this.setState({
+        isLoading: false,
+        user1: res[0],
+        user2: res[1]
+      })
     })
   }
 
@@ -21,8 +26,8 @@ class BattleContainer extends Component {
     return this.state.isLoading === true
       ? <Loading />
       : <Battle
-        user1="@sentreh"
-        user2="@captainwabbit"
+        user1={this.state.user1}
+        user2={this.state.user2}
       />
   }
 }
