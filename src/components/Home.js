@@ -6,7 +6,7 @@ class Home extends Component {
   render() {
     return (
         <Layout>
-            <h1 className="title" style={{textAlign: 'center'}}>Steam Battle</h1>
+            <h1 className="title" style={{textAlign: 'center'}}>Twitter Battle</h1>
             <a className="button is-success">
                 <Link to="/user1">Let's Go!</Link>
             </a>

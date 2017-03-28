@@ -6,7 +6,7 @@ class GetUser extends Component {
     return (
         <Layout>
             <h1 className="title">{this.props.header}</h1>
-            <h5 className="subtitle is-5">Enter Steam username</h5>
+            <h5 className="subtitle is-5">Enter Twitter username</h5>
             <div className="field has-addons has-addons-centered">
                 <p className="control">
                     <input className="input" type="text" placeholder="Enter username" />

@@ -7,7 +7,7 @@ const Nav = () => {
                 <div className="container">
                     <div className="nav-left">
                         <a className="nav-item" href="/">
-                            Steam Battle
+                            Twitter Battle
                         </a>
                     </div>
 
