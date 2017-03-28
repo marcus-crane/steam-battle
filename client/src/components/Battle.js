@@ -13,9 +13,7 @@ const Battle = (props) => {
         <UserInfo info={props.user1} />
         <UserInfo info={props.user2} />
       </div>
-      <Link to="/results" onClick={props.onInitiateBattle}>
-        <button className="button is-success" style={button}>Fight!</button>
-      </Link>
+      <button className="button is-success" onClick={props.onInitiateBattle} style={button}>Fight!</button>
       <Link to="/user1">
         <button className="button is-danger" style={button}>Start Over?</button>
       </Link>
