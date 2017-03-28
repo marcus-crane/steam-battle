@@ -7,9 +7,9 @@ const Battle = (props) => {
   return (
     <Layout>
       <h1 className="title">Confirm Participants</h1>
-      <div className="columns">
-        <UserInfo header="Player 1" info={props.user1} />
-        <UserInfo header="Player 2" info={props.user2} />
+        <div className="columns" style={{ justifyContent: "center" }}>
+          <UserInfo header="Player 1" info={props.user1} />
+          <UserInfo header="Player 2" info={props.user2} />
       </div>
     </Layout>
   );
