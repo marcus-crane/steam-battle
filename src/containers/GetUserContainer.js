@@ -4,7 +4,9 @@ import GetUser from '../components/GetUser'
 class GetUserContainer extends Component {
   render() {
     return (
-      <GetUser header={this.props.header} />
+      <GetUser
+        header={this.props.header}
+      />
     )
   }
 }
