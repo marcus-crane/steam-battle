@@ -6,7 +6,9 @@ import helpers from '../utils/helpers'
 const UserInfo = (props) => {
   console.log(props)
   return (
-    <nav className="level" style={{ display: 'block', paddingRight: '3rem' }}>
+    <nav className="level" style={{ display: 'block', marginLeft: '1.5rem', marginRight: '1.5rem' }}>
+      <h5 className="subtitle is-5" style={{ marginBottom: '12px' }}>{props.info.name}</h5>
+      <img src={props.info.profile_image_url_https} alt="User avatar" style={{ marginBottom: '12px' }} />
       <Item heading="Tweets" value={hrn(props.info.statuses_count)} />
       {props.info.verified && <Item heading="Verified" value="Whoa!" />}
       <Item heading="Followers" value={hrn(props.info.followers_count)} />

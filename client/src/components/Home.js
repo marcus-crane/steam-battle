@@ -7,7 +7,9 @@ class Home extends Component {
     return (
       <Layout>
         <h1 className="title" style={{textAlign: 'center'}}>Twitter Battle</h1>
-        <Link className="button is-success" to="/user1">Let's Go!</Link>
+        <Link to="/user1">
+          <button className="button is-success">Let's Go!</button>
+        </Link>
       </Layout>
     );
   }
