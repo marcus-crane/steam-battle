@@ -1,7 +1,7 @@
 import got from 'got'
 
 const fetchUserInfo = (username) => {
-  return got.get('http://localhost:8181')
+  return got.get('http://localhost:8181/' + username)
   .then((res) => {
     return res.body
   })

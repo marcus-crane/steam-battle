@@ -12,6 +12,9 @@ class BattleContainer extends Component {
   componentDidMount = () => {
     let query = this.context.router.route.location.query
     helpers.fetchInfo(query.user1, query.user2)
+    .then((res) => {
+      console.log(res)
+    })
   }
 
   render() {

@@ -4,7 +4,6 @@
   "description": "The client for the Twitter Battle app",
   "private": true,
   "dependencies": {
-    "dotenv": "^2.0.0",
     "got": "^6.7.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
