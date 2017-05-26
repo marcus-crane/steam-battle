@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const fetchUserInfo = (username) => {
-  return axios.get('http://twitter.thingsima.de/api/' + username)
+  return axios.get('https://twitter.thingsima.de/api/' + username)
   .then((res) => {
     return res.data
   })
